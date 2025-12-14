@@ -1,0 +1,17 @@
+# eval_args:
+#   split: {'LS': 'valid_and_test'}
+#   order: TO
+#   mode: uni100
+# metrics: ['ND', 'LogLoss']
+# valid_metric: AUC
+# repeatable: True
+
+eval_args:
+  # split: {'LS': 'valid_and_test'}
+  split: {'RS': [8, 1, 1]}
+  group_by: user                # (str) The grouping strategy ranging in ['user', 'none'].
+  # group_by: none                # (str) The grouping strategy ranging in ['user', 'none'].
+  order: TO
+  mode: {"valid": "uni100", "test": "full"}
+  # mode: {"valid": "full", "test": "full"}
+repeatable: True
