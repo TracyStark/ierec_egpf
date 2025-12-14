@@ -1,6 +1,6 @@
 # Interest Entropy: Rethinking Contrastive Learning for Sequential Recommendation with Interest Uncertainty
 
-This repository contains the official implementation of **IERec**, our proposed model for sequential recommendation. The code is built upon [RecBole](https://github.com/RUCAIBox/RecBole).
+This repository contains the official implementation of **IERec**, our proposed model for contrastive learning-based sequential recommendation. The code is built upon [RecBole](https://github.com/RUCAIBox/RecBole).
 
 ## Abstract
 
