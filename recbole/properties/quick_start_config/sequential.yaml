@@ -1,0 +1,8 @@
+repeatable: True
+eval_args:                      # (dict) 4 keys: group_by, order, split, and mode
+  split: {'RS':[0.8,0.1,0.1]}   # (dict) The splitting strategy ranging in ['RS','LS'].
+  # split: {'RS':[0.4,0.1,0.5]}   # (dict) The splitting strategy ranging in ['RS','LS'].
+  group_by: user                # (str) The grouping strategy ranging in ['user', 'none'].
+  order: TO                     # (str) The ordering strategy ranging in ['RO', 'TO'].
+  mode: {"valid": "full", "test": "full"}
+noise_ratio: 0.0

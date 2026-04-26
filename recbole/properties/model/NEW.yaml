@@ -1,0 +1,26 @@
+n_layers: 2                     # (int) The number of transformer layers in transformer encoder.
+n_heads: 2                      # (int) The number of attention heads for multi-head attention layer.
+hidden_size: 64                 # (int) The number of features in the hidden state.
+inner_size: 256                 # (int) The inner hidden size in feed-forward layer.
+hidden_dropout_prob: 0.5        # (float) The probability of an element to be zeroed.
+attn_dropout_prob: 0.5          # (float) The probability of an attention score to be zeroed.
+hidden_act: 'gelu'              # (str) The activation function in feed-forward layer.
+layer_norm_eps: 1e-12           # (float) A value added to the denominator for numerical stability.
+initializer_range: 0.02         # (float) The standard deviation for normal initialization.
+loss_type: 'CE'                 # (str) The type of loss function. Range in ['BPR', 'CE'].
+lmd: 0.01                        # (float) The weight of contrastive loss.
+tau: 1.0                        # (float) The temperature of the softmax function.
+# sim: 'dot'                      # (str) The distance metric in infonce.
+sim: 'dot'                      # (str) The distance metric in infonce.
+disturb: 0.1
+stopk: 8
+egpf_beta: 1.0               # (float) EGPF 温度系数 beta, tau(H)=beta*H
+egpf_gamma: 0.9              # (float) EGPF 融合系数 gamma, z_s=gamma*z_enc+(1-gamma)*z_proto
+lambda_proto: 0.01           # (float) EGPF 原型约束损失系数
+egpf_warmup_epochs: 20       # (int) 前N个epoch关闭EGPF，仅训练原IERec主干
+egpf_apply_interval: 2       # (int) 每隔多少个step启用一次EGPF，2可降低每epoch耗时
+egpf_quantile_low: 0.3       # (float) medium划分下分位点
+egpf_quantile_high: 0.7      # (float) medium划分上分位点
+egpf_use_running_quantile: True  # (bool) 使用滑动分位阈值减少batch抖动
+egpf_quantile_momentum: 0.9  # (float) 分位阈值滑动平均动量
+train_neg_sample_args: ~

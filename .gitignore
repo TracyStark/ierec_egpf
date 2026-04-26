@@ -1,0 +1,15 @@
+*.pyc
+__pycache__/
+.venv/
+.DS_Store
+
+log/
+log_tensorboard/
+saved/
+dataset/
+
+*.log
+*.aux
+*.out
+*.toc
+*.synctex.gz
